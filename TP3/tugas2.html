@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihab Hasanain Akmal</title>
+</head>
+<body>
+    <form action=""> 
+        <table>
+            <tr>
+                <td>
+                    NIM: 
+                </td>
+                <td>
+                    <input type="text" name="NIM" id="NIM" size="25" tab>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nama: 
+                </td>
+                <td>
+                    <input type="text" name="Nama" id="Nama" size="25" tab>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tgl Lahir (dd/mm/yyyy):
+                </td>
+                <td>
+                    <input type="date" name="TglLahir" id="TglLahir" size="25" tab>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Jenis Kelamin :
+                </td>
+                <td>
+                    <input type="radio" name="JenisKelamin" id="LakiLaki" value="LakiLaki"> Laki-Laki
+                    <input type="radio" name="JenisKelamin" id="Perempuan" value="Perempuan"> Perempuan
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Alamat di Bandung :
+                </td>
+                <td>
+                    <textarea name="Alamat" id="Alamat" rows="5" cols="30"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tinggal di : 
+                </td>
+                <td>
+                    <select name="TinggalDi" id="TinggalDi">
+                        <option value="--pilih--" selected>--pilih--</option>
+                        <option value="Kos/kontrakan">Kos/kontrakan</option>
+                        <option value="Rumah saudara">Rumah saudara</option>
+                        <option value="Rumah orang tua">Rumah orang tua</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Pilih 2 hobi yang paling disukai :
+                </td>
+                <td>
+                    <input type="checkbox" name="Hobi1" id="Hobi1" value="Science"> Science <br>
+                    <input type="checkbox" name="Hobi2" id="Hobi2" value="Technology"> Technology <br>
+                    <input type="checkbox" name="Hobi3" id="Hobi3" value="Art"> Art <br>
+                    <input type="checkbox" name="Hobi4" id="Hobi4" value="Sport"> Sport <br>
+                </td>
+        </table>
+        <input type="submit" value="Submit" />  
+        <input type="reset" value="Reset"/>
+    </form>
+</body>
+</html>
+
