@@ -1,0 +1,28 @@
+.container {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 350px;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    border-style: dashed;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px grey;
+
+}
+form input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: 'Courier New', Courier, monospace;
+}
+input:focus{
+    outline: none;
+    background-color: rgb(81, 81, 81);
+    color: white;
+}
+#submit:hover{
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+#submit{
+    font-family: 'Courier New', Courier, monospace;
+}
