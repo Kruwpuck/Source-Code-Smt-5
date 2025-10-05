@@ -17,12 +17,10 @@
     top: 0;
 }
 
-/* Logo */
 .icon {
     color: white;
 }
 
-/* Menu */
 .menu ul {
     display: flex;
 }
@@ -45,7 +43,6 @@
     background-size: cover;
     background-position: center;
 
-    margin-top: 80px;
     padding: 40px;
     text-align: left;
     color: white;
@@ -64,6 +61,15 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 28px;
+}
+.home{
+  padding: 80px 24px 10px;     
+  margin: 0 auto;
+}
+
+.section-title{
+  font-size: 28px;
+  bottom: 10px;
 }
 .card{
     display: flex;
