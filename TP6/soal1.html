@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>103032330054_Soal1</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body onload="isiForm()">
+  <form>
+    <div class="form-group">
+      <label>Nama</label>
+      <input type="text" class="form-control" id="nama" readonly>
+    </div>
+    <div class="form-group">
+      <label>NIM</label>
+      <input type="text" class="form-control" id="nim" readonly>
+    </div>
+  </form>
+
+  <script>
+    function isiForm() {
+      var nama = prompt("Masukkan nama kamu:");
+      var nim = prompt("Masukkan NIM kamu:");
+
+      document.getElementById("nama").value = nama.trim();
+      document.getElementById("nim").value  = nim.trim();
+    }
+  </script>
+</body>
+</html>
