@@ -1,0 +1,6 @@
+1. Overloading = membuat dua atau lebih method dengan nama yang sama dalam satu kelas, tetapi jumlah dan tipe data argumen masing – masing method haruslah berbeda satu dengan yang lainnya. 
+overiding = jika dalam suatu subclass Anda mendefinisikan sebuah method yang sama dengan yang dimiliki oleh superclass, maka method yang Anda buat dalam subclass tersebut dikatakan meng-override superclass-nya. Sehingga jika Anda mencoba memanggil method tersebut dari instance subclass yang Anda buat, maka method milik subclass-lah yang akan dipanggil, bukan lagi method milik superclass-nya.
+2.  Jika modifier final digunakan pada deklarasi method dalam Java, maka method tersebut tidak dapat dioverride (ditimpa) oleh subclass.
+3. Jika modifier final digunakan pada deklarasi variabel dalam Java, maka nilai variabel tersebut tidak dapat diubah (di-assign ulang) setelah diberi nilai pertama kali.
+4. Keyword super digunakan untuk merefer superclass dari suatu kelas, yaitu untuk merefer member dari suatu superclass, baik atribut maupun method.
+5. Jika modifier final digunakan pada deklarasi kelas, maka kelas tersebut tidak dapat diwariskan (tidak bisa dijadikan superclass).
