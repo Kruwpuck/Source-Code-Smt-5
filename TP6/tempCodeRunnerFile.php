@@ -1,0 +1,2 @@
+<?php
+REQUEST_METHOD
