@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain dengan Warna</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- IMPORT CDN DISINI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Bermain dengan Warna</h1>
+
+    <div>
+        <button id="tombolMerah">Merah</button>
+        <button id="tombolBiru">Biru</button>
+        <button id="tombolKuning">Kuning</button>
+    </div>
+
+    <div id="kotakWarna"></div>
+
+    <div>
+        <button id="sembunyikanKotak">Sembunyikan Kotak</button>
+        <button id="tampilkanKotak">Tampilkan Kotak</button>
+    </div>
+
+    <p>Klik tombol warna untuk mengubah warna kotak.</p>
+    <p>Gunakan tombol Sembunyikan dan Tampilkan untuk menyembunyikan dan menampilkan kotak.</p>
+
+	<script>
+        $(function () {
+            $("#tombolMerah").on("click",  function () { $("#kotakWarna").css("background-color", "red"); });
+            $("#tombolBiru").on("click",   function () { $("#kotakWarna").css("background-color", "blue"); });
+            $("#tombolKuning").on("click", function () { $("#kotakWarna").css("background-color", "yellow"); });
+
+            $("#sembunyikanKotak").on("click", function () { $("#kotakWarna").fadeOut(200); });
+            $("#tampilkanKotak").on("click",   function () { $("#kotakWarna").fadeIn(200); });
+        });
+    </script>
+</body>
+</html>

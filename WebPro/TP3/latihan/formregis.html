@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h1 align="center"><b>FORMULIR REGISTRASI PRAKTIKAN</b></h1>
+        <table align="center">
+            <tr>
+                <td>NIM :</td>
+                <td><input type="text" name="nim" size="30"></td>
+            </tr>
+            <tr>
+                <td>Username :</td>
+                <td><input type="text" name="username" size="30"></td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td><input type="email" name="email" size="30"></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input type="password" name="password" size="30"></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin :</td>
+                <td>
+                    <input type="radio" name="jk" value="Laki-laki">Laki-laki
+                    <input type="radio" name="jk" value="Perempuan">Perempuan
+                </td>
+            </tr>
+            <tr>
+                <td>Minat :</td>
+                <td>
+                    <input type="checkbox" name="minat[]" value="Renang">Renang <br>
+                    <input type="checkbox" name="minat[]" value="Bersepeda">Bersepeda <br>
+                    <input type="checkbox" name="minat[]" value="Memancing">Memancing <br>
+            </tr>
+            <tr>
+                <td>Jenjang Pendidikan :</td>
+                <td>
+                    <select name="pendidikan">
+                        <option value="----Pilih----" selected>----Pilih----</option>
+                        <option value="D3">D3</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </select>
+            </tr>
+            <tr>
+                <td>Upload Foto :</td>
+                <td><input type="file" name="foto"></td>
+            </tr>
+            <tr>
+                <td>Harapan :</td>
+                <td><textarea name="harapan" id=""></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div align="right"> <input type="submit" value="Cancel"></div>
+                    <div align="right"> <input type="submit" value="Submit"></div>
+                </td>
+            </tr>
+            <tr><td colspan="2" align="center">Sudah punya akun? <a href="formlogin.html">Login di sini</a></td></tr>
+        </table>
+        
+    </form>
+</body>
+</html>

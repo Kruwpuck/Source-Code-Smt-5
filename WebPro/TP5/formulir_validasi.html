@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulir dengan Validasi</title>
+
+</head>
+<body>
+  <h1>Formulir Pendaftaran</h1>
+
+
+  <form id="form" novalidate>
+    <div>
+      <label for="nama">Nama</label><br>
+      <input type="text" id="nama" name="nama" placeholder="Nama lengkap">
+      <div id="err-nama"></div>
+    </div>
+
+    <div>
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="email" placeholder="nama@domain.com">
+      <div id="err-email"></div>
+    </div>
+
+    <div>
+      <label for="password">Password</label><br>
+      <input type="password" id="password" name="password" placeholder="Minimal 8 karakter">
+      <div id="err-password"></div>
+    </div>
+
+    <button type="submit">Kirim</button>
+    <div id="ok"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('form');
+    const nama = document.getElementById('nama');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const errNama = document.getElementById('err-nama');
+    const errEmail = document.getElementById('err-email');
+    const errPassword = document.getElementById('err-password');
+    const ok = document.getElementById('ok');
+
+    function isEmailValid(value) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      return re.test(value);
+    }
+
+    form.addEventListener('submit', (e) => {
+      errNama.textContent = '';
+      errEmail.textContent = '';
+      errPassword.textContent = '';
+      ok.textContent = '';
+
+      let valid = true;
+
+      if (!nama.value.trim()) {
+        errNama.textContent = 'Nama wajib diisi.';
+        valid = false;
+      }
+
+      const mail = email.value.trim();
+      if (!mail) {
+        errEmail.textContent = 'Email wajib diisi.';
+        valid = false;
+      } else if (!isEmailValid(mail)) {
+        errEmail.textContent = 'Format email tidak valid. Contoh: nama@domain.com';
+        valid = false;
+      }
+
+      const pass = password.value;
+      if (!pass) {
+        errPassword.textContent = 'Password wajib diisi.';
+        valid = false;
+      } else if (pass.length < 8) {
+        errPassword.textContent = 'Password minimal 8 karakter.';
+        valid = false;
+      }
+
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
+
+      e.preventDefault(); // demo: jangan kirim, hanya tampilkan sukses
+      ok.textContent = 'Formulir valid! Data siap dikirim.';
+    });
+  </script>
+</body>
+</html>

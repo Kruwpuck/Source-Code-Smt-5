@@ -1,0 +1,68 @@
+/* style1.css */
+* { box-sizing: border-box; }
+
+body {
+  margin: 40px;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+.head {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+/* NAV: sticky + z-index agar selalu di atas konten */
+nav {
+  position: sticky;   /* bisa ganti ke fixed kalau mau selalu nempel */
+  top: 0;
+  background-color: blue;
+  z-index: 2;
+  padding: 5px 10px;
+  margin-top: 10px;
+  overflow-x: auto;   /* kalau link banyak, bisa di-scroll horizontal */
+  white-space: nowrap;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 5px;
+  color: white;
+  text-decoration: none;
+  padding: 4px 6px;
+}
+nav a:hover { text-decoration: underline; }
+
+/* GRID KARTU */
+.cen {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+p { margin-top: 8px; }
+
+/* Kartu seragam, tinggal beda warna */
+.card {
+  width: 160px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Warna tiap kartu */
+.container1 { background-color: greenyellow; }
+.container2 { background-color: red;         }
+.container3 { background-color: yellow;      }

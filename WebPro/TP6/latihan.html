@@ -1,0 +1,161 @@
+<!--No1-1-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Dialog Alert</title>
+    <style>
+        body { 
+            text-align: center; 
+            font-family: Arial;
+            margin-top: 40px;
+        }
+        button {
+            padding: 8px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        h1 {
+            font-size: 34px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Javascript Dialog Alert</h1>
+    <button onclick="cekMahasiswa()">Klik Saya</button>
+
+    <p id="output"></p> <!-- Awalnya kosong -->
+
+    <script>
+        function cekMahasiswa() {
+            let konfirmasi = confirm("Tekan OK Jika Kamu adalah Mahasiswa Telkom ?");
+
+            if (konfirmasi) {
+                let nama = prompt("Siapa nama kamu?");
+                let nim = prompt("Tuliskan nim kamu?");
+
+                if (nama && nim) {
+                    document.getElementById("output").innerHTML =
+                        "Selamat Datang <br>" + nama + ", " + nim;
+                }
+            } else {
+                document.getElementById("output").innerHTML =
+                    "Kamu bukan Mahasiswa Telkom !!!";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+<!-- No2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Perawatan Tanaman Interaktif</title>
+<style>
+    body { font-family: Arial; text-align: center; background: #e9f4e8; }
+    .container { background: #dff1d7; width: 60%; margin: auto; padding: 20px; border-radius: 10px; }
+    button { background: #3fa34d; color: white; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer; margin: 5px;}
+    #pertumbuhanTanaman {
+        background: #64ca56;
+        border-radius: 50%;
+        margin: 20px auto;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<!-- jQuery CDN (aman untuk praktikum jika belum ada file jquery.js) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Panduan Interaktif Perawatan Tanaman</h1>
+
+        <h2>1. Tips Perawatan</h2>
+        <button id="btnTips">Tampilkan Tips</button>
+        <div id="tips" style="display:none;">
+            <p>Siram tanaman secara teratur</p>
+            <p>Berikan sinar matahari cukup</p>
+            <p>Beri pupuk saat musim tumbuh</p>
+        </div>
+
+        <h2>2. Tanaman Virtual</h2>
+        <p>Poin Perawatan: <span id="poin">0</span></p>
+
+        <button id="btnSiram">Siram Tanaman</button>
+        <button id="btnPupuk">Beri Pupuk</button>
+        <button id="btnPangkas">Pangkas Tanaman</button>
+
+        <div id="pertumbuhanTanaman"></div>
+
+    </div>
+
+<script>
+    $(document).ready(function () {
+
+        let poin = 0;
+        let pupukCount = 0;
+        let tanaman = $("#pertumbuhanTanaman");
+        let ukuranAwal = tanaman.width();
+
+        // Toggle Tips Perawatan
+        $("#btnTips").click(function () {
+            $("#tips").toggle();
+            $(this).text($("#tips").is(":visible") ? "Sembunyikan Tips" : "Tampilkan Tips");
+        });
+
+        // Fungsi bantu ubah ukuran tanaman
+        function ubahUkuran(px) {
+            tanaman.width(tanaman.width() + px);
+            tanaman.height(tanaman.height() + px);
+        }
+
+
+        // Siram Tanaman
+        $("#btnSiram").click(function () {
+            poin++;
+            ubahUkuran(10);
+            $("#poin").text(poin);
+        });
+
+        // Pupuk Tanaman - max 2x
+        $("#btnPupuk").click(function () {
+            if (pupukCount < 2) {
+                pupukCount++;
+                poin += 2;
+                ubahUkuran(15);
+                $("#poin").text(poin);
+            } else {
+                alert("Tanaman sudah cukup diberi pupuk!");
+            }
+        });
+
+        // Pangkas Tanaman
+        $("#btnPangkas").click(function () {
+            tanaman.width(ukuranAwal);
+            tanaman.height(ukuranAwal);
+            pupukCount = 0;
+            poin++;
+            $("#poin").text(poin);
+            alert("Tanaman telah dipangkas!");
+        });
+
+    });
+
+    $(document).ready(function(){
+
+    });
+</script>
+
+</body>
+</html>
