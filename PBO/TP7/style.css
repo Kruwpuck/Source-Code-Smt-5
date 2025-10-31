@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #111827;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  gap: 20px;
+}
+
+aside {
+  position: fixed;    
+  top: 0;
+  left: 0;
+  bottom: 0;           
+  width: 260px;        
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  z-index: 100;     
+}
+
+.main {
+  margin-left: 260px; 
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  min-height: 100vh;
+}
+
+.user-info {
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.user-info p {
+  margin: 3px 0;  
+}
+
+.foto {
+  width: 70px;
+  height: 70px;
+  background-color: #25eb4d; 
+  border-radius: 50%;
+  margin: 10px auto ;
+}
+
+.menu h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #b91c1c; 
+}
+
+.menu hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  width: 100%;
+  margin: 10px 0;
+ 
+}
+
+.menu p {
+  margin: 0;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 8px;         
+  transition: all 0.4s ease-in-out;
+}
+.menu p:hover {
+  background-color: #e75a5a;   
+  color: #fff;                 
+}
+
+
+/* section 1*/
+.jadwal {
+  border-radius: 2px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  background-color: #c4ead1; 
+}
+
+.jadwal h2 {
+  font-size: 16px;
+  color: #0b6b3a; 
+  margin-bottom: 15px;
+  margin-top: 2px;
+}
+
+.jadwal table {
+  width: 100%;
+  border-collapse: collapse; 
+  text-align: center; 
+  background-color: #c4ead1;
+}
+
+.jadwal th {
+  color: #0b6b3a;
+  padding: 6px;
+  font-weight: 600;
+  border: 1px solid rgb(188, 186, 186);
+}
+
+.jadwal td {
+  padding: 6px;
+  border: 1px solid rgb(188, 186, 186);
+  color: #0b6b3a;
+}
+
+/* section 2 */
+.mahasiswa {
+  margin: 20px;
+}
+
+.mahasiswa .judul {
+  background-color: #fff3cd; 
+  color: #856404;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Baris filter */
+.filter-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  
+}
+
+.filter-box span {
+  font-weight: 500;
+}
+
+.filter-box select {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-filter {
+  background-color: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-filter:hover {
+  background-color: #15803d;
+}
+
+.tampil-box span {
+  font-weight: 500;
+}
+.tampil-box {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.tampil-box select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tabel-mahasiswa {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9fff9;
+  margin-top: 15px;
+  font-size: 14px;
+  border-radius: 8px;
+   overflow: hidden;
+}
+
+.tabel-mahasiswa th {
+  background-color: #e90f0f;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #b6d8b7;
+}
+
+.tabel-mahasiswa td {
+  padding: 10px;
+  border: 1px solid #d9e8da;
+  color: #000;
+  text-align: center;
+ 
+}
+
+.tabel-mahasiswa button {
+  background-color: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.tabel-mahasiswa button:hover {
+  background-color: #15803d;
+}
+
+.tabel-mahasiswa button:first-child {
+  background-color: #2563eb;
+}
+
+.tabel-mahasiswa button:first-child:hover {
+  background-color: #1d4ed8;
+}
+
+
+
+
+
+
