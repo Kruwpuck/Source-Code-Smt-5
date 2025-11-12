@@ -36,8 +36,6 @@ public abstract class Serangga {
     public Koordinat getPosisi() {
         return posisi;
     }
-    public void gerak(Koordinat k){
-        this.posisi = k;
-    }
+    public abstract void gerak(Koordinat k);
     public abstract void info();
 }

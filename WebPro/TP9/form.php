@@ -16,7 +16,6 @@
 
     <div>
       <label for="tgl">Tanggal Lahir:</label><br>
-      <!-- format input: dd/mm/yyyy agar sama seperti contoh -->
       <input type="text" id="tgl" name="tgl" placeholder="dd/mm/yyyy" required>
     </div>
     <br>
