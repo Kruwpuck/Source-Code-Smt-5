@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihab Hasanain Akmal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .response-section {
+            margin-top: 30px;
+        }
+
+        .response-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        #response {
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 50px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .success {
+            background: #d4edda !important;
+            border: 1px solid #c3e6cb;
+            color: #155724 !important;
+        }
+
+        .error {
+            background: #f8d7da !important;
+            border: 1px solid #f5c6cb;
+            color: #721c24 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Sapa Menggunakan AJAX dan PHP</h1>
+        
+        <form id="nameForm">
+            <div class="form-group">
+                <label for="nama">Masukkan Nama Anda:</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Alex">
+            </div>
+            
+            <button type="submit">Kirim</button>
+        </form>
+
+        <div class="response-section">
+            <h2>Respon Server:</h2>
+            <div id="response">Menunggu input...</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nama = document.getElementById('nama').value;
+            const responseDiv = document.getElementById('response');
+            
+            const xhr = new XMLHttpRequest();
+            
+            xhr.open('POST', 'server.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const response = xhr.responseText;
+                    
+                    if (response.includes('tidak boleh kosong')) {
+                        responseDiv.className = 'error';
+                    } else {
+                        responseDiv.className = 'success';
+                    }
+                    
+                    responseDiv.textContent = response;
+                }
+            };
+            
+            xhr.send('nama=' + encodeURIComponent(nama));
+        });
+    </script>
+</body>
+</html>
