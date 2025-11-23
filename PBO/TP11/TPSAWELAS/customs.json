@@ -1,0 +1,10 @@
+{
+    "elements": {
+        "tittle": {}
+    },
+    "attributes": {
+        "http-equiv": {
+            "context": "meta"
+        }
+    }
+}
