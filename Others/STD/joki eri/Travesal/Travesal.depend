@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1764305039 source:d:\kuliah\semester 5\source-code-smt-5\others\std\joki eri\travesal\source.cpp
+	"header.h"
+
+1764304473 d:\kuliah\semester 5\source-code-smt-5\others\std\joki eri\travesal\header.h
+	<iostream>
+
+1764304951 source:d:\kuliah\semester 5\source-code-smt-5\others\std\joki eri\travesal\main.cpp
+	"header.h"
+
