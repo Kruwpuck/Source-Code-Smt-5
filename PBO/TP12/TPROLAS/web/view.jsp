@@ -21,9 +21,9 @@
                 <th>Harga</th>
             </tr>
             <%
-            ResultSet rs = (ResultSet) request.getAttribute("list"); // Ambil ResultSet [cite: 296]
+            ResultSet rs = (ResultSet) request.getAttribute("list"); 
             if (rs != null) {
-                while (rs.next()) { // Iterasi setiap baris data [cite: 298]
+                while (rs.next()) { 
                     int id = rs.getInt("id"); 
                     String nama = rs.getString("nama"); 
                     double harga = rs.getDouble ("harga"); 
@@ -38,6 +38,6 @@
             }
             %>
         </table>
-        <a href="form.jsp">Tambah Barang</a> [cite: 321]
+        <a href="form.jsp">Tambah Barang</a> 
     </body>
 </html>

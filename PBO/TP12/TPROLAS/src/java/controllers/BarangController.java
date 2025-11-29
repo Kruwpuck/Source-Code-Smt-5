@@ -18,55 +18,54 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ihabh
  */
-@WebServlet(name = "BarangController", urlPatterns = {"/BarangController"})
+@WebServlet(name = "BarangController", urlPatterns = { "/BarangController" })
 public class BarangController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         JDBC db = new JDBC();
-        String menu = request.getParameter("menu"); // Ambil parameter menu [cite: 329]
+        String menu = request.getParameter("menu");
 
         if (request.getParameterMap().isEmpty() || (menu != null && menu.equals("view"))) {
-            // KONDISI DEFAULT / VIEW: Tampilkan daftar barang
+
             ResultSet rs = db.getData("select * from barang");
             request.setAttribute("list", rs);
-            request.getRequestDispatcher("view.jsp").forward(request, response); 
+            request.getRequestDispatcher("view.jsp").forward(request, response);
 
         } else if ("add".equals(menu)) {
-            // KONDISI ADD: Tampilkan form.jsp
-            request.getRequestDispatcher("form.jsp").forward (request, response);
+
+            request.getRequestDispatcher("form.jsp").forward(request, response);
 
         } else if ("insert".equals(menu)) {
-            // KONDISI INSERT: Lakukan penambahan data
-            String nama = request.getParameter("nama"); 
+
+            String nama = request.getParameter("nama");
             Double harga = Double.parseDouble(request.getParameter("harga"));
 
-            // Jalankan query INSERT
-            db.runQuery("INSERT INTO barang (nama, harga) VALUES ('" + nama + "', " + harga+ ")"); 
+            db.runQuery("INSERT INTO barang (nama, harga) VALUES ('" + nama + "', " + harga + ")");
 
-            // Kembali ke daftar barang (redirect)
             response.sendRedirect("BarangController");
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
+    // + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -77,10 +76,10 @@ public class BarangController extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
