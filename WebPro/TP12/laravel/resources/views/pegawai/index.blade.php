@@ -39,6 +39,9 @@
                         <tr>
                             <td colspan="4" class="text-center">No data available.</td>
                         </tr>
+                        <tr>
+                            
+                        </tr>
                     @endforelse
                 </tbody>
             </table>

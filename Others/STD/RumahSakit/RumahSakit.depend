@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1764552821 source:d:\kuliah\semester 5\source-code-smt-5\others\std\rumahsakit\main.cpp
+	"header.h"
+
+1764553221 d:\kuliah\semester 5\source-code-smt-5\others\std\rumahsakit\header.h
+	<iostream>
+	<string>
+
