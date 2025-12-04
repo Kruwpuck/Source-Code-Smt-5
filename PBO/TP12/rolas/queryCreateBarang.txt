@@ -1,0 +1,11 @@
+CREATE TABLE barang (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ... VARCHAR(255) NOT NULL,
+    ... INT NOT NULL,
+    ... DECIMAL(15, 2) NOT NULL  
+);
+
+INSERT INTO ... (nama, jumlah, harga)
+VALUES 
+    ('Laptop', 10, 7500000),
+    ('Mouse', 50, 150000);
